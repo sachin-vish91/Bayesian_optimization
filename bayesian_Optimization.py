@@ -31,7 +31,8 @@ def evaluate_model(**params):
 	estimate = mean(result)
 	return 1.0 - estimate
  
-# perform optimization using gaussian process
+# perform optimization using gaussian process with default parameter
+# for more detail on gp_minimize see the documentation https://scikit-optimize.github.io/stable/modules/generated/skopt.gp_minimize.html
 result = gp_minimize(evaluate_model, search_space)
 
 # Print the final result
